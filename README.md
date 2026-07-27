@@ -11,6 +11,7 @@ This project is a conversational Business Intelligence (BI) Agent that connects 
 Instead of relying on manually exported CSV or Excel files, the application dynamically fetches data from Monday.com boards, cleans inconsistent records, performs cross-board analysis, and generates actionable business insights.
 
 ---
+FINALLY DEPLOYED LINK: https://mondaybiagentbyraksh.streamlit.app/
 
 ## 🎥 Demo Video
 
