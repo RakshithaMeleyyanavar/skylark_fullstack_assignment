@@ -25,7 +25,8 @@ class MondayClient:
     """Client for fetching live board data from Monday.com GraphQL API."""
 
     def __init__(self, api_token: Optional[str] = None):
-        self.api_token = api_token or os.getenv("MONDAY_API_TOKEN")
+        self.api_token = api_token or os.getenv("eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjY4NjY2MDkyOCwiYWFpIjoxMSwidWlkIjoxMTE1MTUwNjgsImlhZCI6IjIwMjYtMDctMjdUMDY6MTU6MzMuMDAwWiIsInBlciI6Im1lOndyaXRlIiwiYWN0aWQiOjM2MjI1MDg4LCJyZ24iOiJhcHNlMiJ9.VeSA5paONR2f1YaYwbxJ-4oZYrgLfm9BKIVmxJ1kyhQ
+")
         if not self.api_token:
             raise ValueError(
                 "MONDAY_API_TOKEN environment variable is missing. "
