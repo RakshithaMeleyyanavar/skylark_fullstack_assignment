@@ -1,105 +1,138 @@
-# Monday.com Conversational Business Intelligence Agent
+# 🚀 Monday.com Conversational Business Intelligence Agent
 
-An AI-powered Business Intelligence Agent that enables founders and business leaders to ask natural language questions about their Monday.com business data and receive real-time insights.
-
-## Project Overview
-
-This application connects directly to Monday.com using the GraphQL API (Read-Only) and provides conversational business intelligence across multiple boards without relying on locally stored CSV data.
-
-The system automatically:
-- Fetches live data from Monday.com
-- Cleans and normalizes inconsistent business records
-- Handles missing and incomplete values gracefully
-- Performs cross-board analytics
-- Answers founder-level business questions using an AI agent
-- Generates leadership-ready insights and summaries
+> AI-powered Business Intelligence Agent for founders and business leaders to query Monday.com data using natural language and receive real-time business insights.
 
 ---
 
-## Features
+## 📌 Project Overview
 
-### Live Monday.com Integration
-- Read-only GraphQL API integration
-- Dynamic live data fetching
-- No hardcoded datasets
-- Automatic authentication
+This project is a conversational Business Intelligence (BI) Agent that connects directly to **Monday.com** via the **GraphQL API (Read-Only)** and answers founder-level business questions using live organizational data.
 
-### Data Cleaning & Resilience
-- Missing value handling
+Instead of relying on manually exported CSV or Excel files, the application dynamically fetches data from Monday.com boards, cleans inconsistent records, performs cross-board analysis, and generates actionable business insights.
+
+---
+
+## 🎥 Demo Video
+
+📹 **Working Demo:**  
+https://drive.google.com/file/d/1p2F4PB9Y_A26-F5kcDcZmhCgQT0MxTA0/view?usp=drive_link
+
+The demo showcases:
+
+- ✅ Live Monday.com integration
+- ✅ Conversational AI interface
+- ✅ Cross-board analytics
+- ✅ Data cleaning & resilience
+- ✅ Leadership dashboard
+- ✅ Business intelligence workflow
+- ✅ End-to-end application demonstration
+
+---
+
+# ✨ Features
+
+## 🔗 Live Monday.com Integration
+
+- Read-only GraphQL API
+- Live data fetching
+- Dynamic board querying
+- Secure authentication
+- No hardcoded CSV files
+
+---
+
+## 🧹 Data Cleaning & Resilience
+
+The application automatically handles:
+
+- Missing values
+- Null fields
+- Duplicate records
 - Date normalization
 - Text normalization
-- Duplicate detection
+- Inconsistent naming
 - Data quality reporting
 
-### Conversational BI
-Example questions:
+---
 
-- How is our pipeline performing?
+## 💬 Conversational Business Intelligence
+
+Example business questions:
+
+- How is our sales pipeline performing?
 - Show won deals this quarter.
-- Which sector has the highest revenue?
-- Compare deal conversion by owner.
+- Which sector generated the highest revenue?
+- Compare conversion rates by owner.
 - Which work orders are delayed?
-- Show cross-board owner performance.
-- What data quality issues exist?
+- Show owner-wise performance.
+- What are the current data quality issues?
 
-### Cross Board Analytics
-Combines
+---
 
-- Deal Funnel Board
-- Work Order Tracker Board
+## 📊 Cross Board Analytics
+
+The system combines information from:
+
+- 📁 Deal Funnel Board
+- 📁 Work Order Tracker Board
 
 to generate unified business insights.
 
-### Leadership Dashboard
+---
 
-Provides
+## 📈 Leadership Dashboard
 
-- Pipeline health
-- Revenue summary
-- Data quality metrics
-- Cross-board comparisons
-- Operational insights
+Provides:
+
+- Revenue Summary
+- Pipeline Health
+- Sector Performance
+- Win / Loss Analysis
+- Owner Performance
+- Operational Metrics
+- Cross-board Insights
+- Data Quality Metrics
 
 ---
 
-## Architecture
+# 🏗️ System Architecture
 
-```
-User
-   │
-   ▼
-Streamlit Web UI
-   │
-   ▼
-AI Agent
-   │
-   ├──────────────┐
-   ▼              ▼
-Business Logic   Query Understanding
-   │
-   ▼
-Monday GraphQL Client
-   │
-   ▼
-Monday.com API
-   │
-   ▼
-Deal Funnel Board
-Work Order Board
+```text
+                    User
+                      │
+                      ▼
+            Streamlit Web Application
+                      │
+                      ▼
+             Conversational AI Agent
+                      │
+        ┌─────────────┴─────────────┐
+        ▼                           ▼
+ Business Logic              Query Understanding
+        │
+        ▼
+   Monday GraphQL Client
+        │
+        ▼
+     Monday.com API
+        │
+ ┌──────┴────────┐
+ ▼               ▼
+Deal Funnel   Work Orders
 ```
 
 ---
 
-## Project Structure
+# 📂 Project Structure
 
-```
+```text
 .
 ├── app.py
 ├── agent.py
 ├── monday_client.py
 ├── tools.py
-├── join_logic.py
 ├── cache.py
+├── join_logic.py
 ├── data_cleaning.py
 ├── data_quality.py
 ├── leadership_summary.py
@@ -110,27 +143,34 @@ Work Order Board
 
 ---
 
-## Technology Stack
+# ⚙️ Technology Stack
 
-- Python 3.x
-- Streamlit
-- Monday.com GraphQL API
-- Requests
-- Pandas
-- Python Dotenv
+| Category | Technologies |
+|----------|--------------|
+| Language | Python |
+| Frontend | Streamlit |
+| API | Monday.com GraphQL API |
+| AI | Google Gemini |
+| HTTP | Requests |
+| Data Processing | Pandas |
+| Environment | Python Dotenv |
+| Caching | In-Memory TTL Cache |
 
 ---
 
-## Installation
+# 🚀 Installation
 
-Clone repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/RakshithaMeleyyanavar/skylark_fullstack_assignment.git
+
 cd skylark_fullstack_assignment
 ```
 
-Install dependencies
+---
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -138,26 +178,29 @@ pip install -r requirements.txt
 
 ---
 
-## Environment Configuration
+## Configure Environment Variables
 
-Create a `.env` file
+Create a `.env` file.
 
 ```env
-MONDAY_API_TOKEN=YOUR_TOKEN
-DEAL_FUNNEL_BOARD_ID=YOUR_BOARD_ID
-WORK_ORDER_BOARD_ID=YOUR_BOARD_ID
+MONDAY_API_TOKEN=YOUR_MONDAY_API_TOKEN
+
+DEAL_FUNNEL_BOARD_ID=YOUR_DEAL_BOARD_ID
+
+WORK_ORDER_BOARD_ID=YOUR_WORK_ORDER_BOARD_ID
+
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
 
 ---
 
-## Run Application
+## Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
-Application runs at
+Application will be available at
 
 ```
 http://localhost:8501
@@ -165,75 +208,80 @@ http://localhost:8501
 
 ---
 
-## Read-Only Security
+# 🔒 Security
 
-This project intentionally performs only GraphQL **query** operations.
+This application is intentionally designed as a **Read-Only Business Intelligence Agent**.
 
-The application:
+The system:
 
-- Never performs mutations
-- Never edits Monday.com data
-- Never deletes records
-- Never modifies business information
+- ✅ Executes GraphQL **Query** operations only
+- ❌ Never performs GraphQL Mutations
+- ❌ Never edits Monday.com data
+- ❌ Never deletes records
+- ❌ Never modifies business information
 
-Monday.com remains the single source of truth.
+Monday.com remains the **single source of truth**.
 
 ---
 
-## Data Quality Handling
+# 🧠 Data Quality Handling
 
-The agent automatically handles
+The application automatically detects and handles:
 
 - Missing values
 - Empty records
-- Inconsistent dates
-- Mixed text formatting
 - Duplicate entries
-- Invalid values
+- Invalid data
+- Mixed date formats
+- Text inconsistencies
+- Incomplete information
 
-while informing users about potential data quality issues.
-
----
-
-## Leadership Insights
-
-The system generates:
-
-- Revenue summaries
-- Pipeline health
-- Win/Loss analysis
-- Owner performance
-- Sector performance
-- Cross-board metrics
-- Data completeness reports
+Whenever issues are detected, they are communicated clearly to the user.
 
 ---
 
-## Design Decisions
+# 📊 Business Intelligence Outputs
 
-- Monday.com used as the only source of truth.
-- Read-only GraphQL architecture for safety.
-- In-memory caching for improved performance.
-- Modular architecture separating API, business logic, data cleaning, and UI.
-- Conversational interface designed for founder-level business questions.
+The AI agent generates:
 
----
-
-## Future Improvements
-
-- Multi-board support
-- Authentication & user roles
-- Dashboard export (PDF/Excel)
-- Historical trend analysis
-- Scheduled leadership reports
-- Advanced AI reasoning with Retrieval-Augmented Generation (RAG)
+- Revenue Reports
+- Pipeline Health
+- Win / Loss Analysis
+- Sector Performance
+- Owner Performance
+- Cross-board Analytics
+- Leadership Updates
+- Data Completeness Reports
 
 ---
 
-## Assignment Mapping
+# 🎯 Design Decisions
+
+- Monday.com serves as the single source of truth.
+- Read-only GraphQL architecture ensures data safety.
+- Live API integration eliminates stale local datasets.
+- Modular architecture improves maintainability.
+- In-memory caching reduces unnecessary API calls.
+- Conversational interface designed for founder-level decision making.
+
+---
+
+# 🔮 Future Enhancements
+
+- Authentication & User Roles
+- Multi-board Support
+- Dashboard Export (PDF / Excel)
+- Historical Trend Analysis
+- Scheduled Leadership Reports
+- RAG-based Knowledge Retrieval
+- AI Recommendations & Forecasting
+
+---
+
+# ✅ Assignment Requirement Mapping
 
 | Requirement | Status |
-|------------|--------|
+|------------|:------:|
 | Monday.com Integration | ✅ |
 | Read-only API | ✅ |
 | Live Data Fetching | ✅ |
@@ -241,20 +289,30 @@ The system generates:
 | Missing Value Handling | ✅ |
 | Cross-board Analytics | ✅ |
 | Conversational Interface | ✅ |
-| Leadership Insights | ✅ |
+| Leadership Dashboard | ✅ |
 | Hosted Prototype | ✅ |
 | Source Code | ✅ |
-| README | ✅ |
+| README Documentation | ✅ |
+| Demo Video | ✅ |
 
 ---
 
-## Author
+# 👩‍💻 Author
 
 **Rakshitha Meleyyanavar**
 
-BE Computer Science Engineering
+Bachelor of Engineering (Computer Science)
 
 BNM Institute of Technology
 
-GitHub:
-https://github.com/RakshithaMeleyyanavar
+📧 GitHub Repository
+
+https://github.com/RakshithaMeleyyanavar/skylark_fullstack_assignment
+
+---
+
+## ⭐ Thank You
+
+Thank you for reviewing this submission.
+
+This project was developed as part of the **Skylark Drones Full Stack Technical Assignment**, demonstrating live Monday.com integration, conversational AI, data resilience, cross-board analytics, and founder-focused business intelligence.
